@@ -10,4 +10,13 @@
       <ProjectReference Include="..\RoadMap.Domain\RoadMap.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="RoadMap\Specialization\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Carter" Version="8.2.1" />
+      <PackageReference Include="Mapster" Version="7.4.0" />
+    </ItemGroup>
+
 </Project>
