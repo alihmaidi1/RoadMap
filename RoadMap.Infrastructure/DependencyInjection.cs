@@ -29,6 +29,7 @@ public static class DependencyInjection
             .AsImplementedInterfaces()
             .WithScopedLifetime()
         );
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
         return services;
 
     }

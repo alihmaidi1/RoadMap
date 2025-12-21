@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
+using RoadMap.Domain.OperationResult;
 
 namespace RoadMap.Application.RoadMap.Section.AddSection;
 
@@ -17,11 +18,10 @@ public class AddSectionEndPoint: ICarterModule
                 async ([FromBody]  AddSectionRequest request,ISender sender,CancellationToken cancellationToken) =>
                 {
                     AddSectionCommand command = request.Adapt<AddSectionCommand>();
-                    await sender.Send(command);
-                    return Task.CompletedTask;
+                    var result=await sender.Send(command);
+                    return result;
+
                 })
-            .Produces(StatusCodes.Status201Created)
-            .ProducesProblem(StatusCodes.Status400BadRequest)
             .WithTags("Section")
             .WithSummary("Add section")
             .WithDescription("Add section");
