@@ -21,7 +21,17 @@ public class Section : Entity,IEntity
         return section;
     }
     
-    
+    public void SetName(string name)
+    {
+        ArgumentNullException.ThrowIfNull(name);
+        this.Name = name;
+    }
+
+    public bool EnsureCanBeDeleted()
+    {
+
+        return ! this.Specializations.Any();
+    }
     public ICollection<Specialization> Specializations { get; private set; } = new List<Specialization>();
 
     

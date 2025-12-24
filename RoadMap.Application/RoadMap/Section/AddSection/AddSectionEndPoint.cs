@@ -23,7 +23,7 @@ public class AddSectionEndPoint: ICarterModule
 
                 })
             .WithTags("Section")
-            .WithSummary("Add section")
-            .WithDescription("Add section");
+            .WithSummary("add section")
+            .WithDescription("add section");
     }
 }

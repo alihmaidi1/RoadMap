@@ -37,6 +37,9 @@ public class Result
     public static TResult<TValue> Created<TValue>() where TValue : new() => 
         new(default, true, HttpStatusCode.Created);
 
+    public static TResult<TValue> NoContent<TValue>() where TValue : new() => 
+        new(default, true, HttpStatusCode.NoContent);
+
     
     // Failure cases
     public static TResult<TValue> Failure<TValue>(Error error, HttpStatusCode statusCode) => 

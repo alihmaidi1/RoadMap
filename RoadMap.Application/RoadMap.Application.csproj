@@ -11,9 +11,12 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="RoadMap\Section\DeleteSection\" />
-      <Folder Include="RoadMap\Section\UpdateSection\" />
-      <Folder Include="RoadMap\Specialization\" />
+      <Folder Include="RoadMap\Specialization\AddSpecialization\" />
+      <Folder Include="RoadMap\Specialization\DeleteSpecialization\" />
+      <Folder Include="RoadMap\Specialization\UpdateSpecialization\" />
+      <Folder Include="Security\Admin\AddAdmin\" />
+      <Folder Include="Security\Admin\DeleteAdmin\" />
+      <Folder Include="Security\Auth\" />
     </ItemGroup>
 
     <ItemGroup>

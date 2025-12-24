@@ -1,4 +1,4 @@
-﻿namespace RoadMap.Application.Security.Login;
+﻿namespace RoadMap.Application.Security.Auth.Login;
 
 public class LoginAdminResponse
 {

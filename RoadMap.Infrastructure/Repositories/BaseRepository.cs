@@ -6,7 +6,7 @@ namespace RoadMap.Infrastructure.Repositories;
 
 public class BaseRepository <TEntity> : IBaseRepository<TEntity> where TEntity : class, IEntity
 {
-    private readonly DbContext _context;
+    protected readonly DbContext _context;
 
     public BaseRepository(DbContext context)
     {
@@ -48,10 +48,9 @@ public class BaseRepository <TEntity> : IBaseRepository<TEntity> where TEntity :
 
     }
 
-    public async Task DeleteAsync(Guid id)
+    public virtual async Task DeleteAsync(TEntity entity)
     {
-        var entity = await _context.Set<TEntity>().FindAsync(id);
-        if (entity != null) _context.Set<TEntity>().Remove(entity);
+        _context.Set<TEntity>().Remove(entity);
 
     }
 

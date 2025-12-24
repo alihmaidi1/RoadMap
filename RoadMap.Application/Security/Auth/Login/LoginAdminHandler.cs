@@ -3,7 +3,7 @@ using RoadMap.Domain.OperationResult;
 using RoadMap.Domain.Repository;
 using RoadMap.Domain.Security;
 
-namespace RoadMap.Application.Security.Login;
+namespace RoadMap.Application.Security.Auth.Login;
 
 internal sealed class LoginAdminHandler: ICommandHandler<LoginAdminCommand,TResult<LoginAdminResponse>>
 {
