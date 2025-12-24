@@ -69,6 +69,34 @@ namespace RoadMap.Infrastructure.Migrations
                     b.ToTable("Specialization");
                 });
 
+            modelBuilder.Entity("RoadMap.Domain.Security.Admin", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("IsSuperAdmin")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime>("LastModified")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Admins");
+                });
+
             modelBuilder.Entity("RoadMap.Domain.RoadMap.Specialization", b =>
                 {
                     b.HasOne("RoadMap.Domain.RoadMap.Section", "Section")

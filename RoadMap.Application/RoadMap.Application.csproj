@@ -11,6 +11,8 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="RoadMap\Section\DeleteSection\" />
+      <Folder Include="RoadMap\Section\UpdateSection\" />
       <Folder Include="RoadMap\Specialization\" />
     </ItemGroup>
 

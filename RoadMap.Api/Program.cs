@@ -3,6 +3,7 @@ using RoadMap.Api.Extension;
 using RoadMap.Api.Middleware;
 using RoadMap.Application;
 using RoadMap.Infrastructure;
+using RoadMap.Infrastructure.Seed;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,5 +26,12 @@ app.UseSwaggerUI(options =>
     {
         options.SwaggerEndpoint("/swagger/v1/swagger.json", "RoadMap API v1");
     });
+
+using(var scope= app.Services.CreateScope()){
+    
+    
+    await DatabaseSeed.InitializeAsync(scope.ServiceProvider);
+
+}
 
 app.Run();
